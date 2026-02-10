@@ -64,6 +64,9 @@ for (const pkgDir of packages) {
   console.log(`  Updated ${pkgDir}/package.json`);
 }
 
+// Sync lockfile with updated dependency versions
+execSync("yarn install", { cwd: rootDir, stdio: "inherit" });
+
 // Git operations
 execSync("git add -A", { cwd: rootDir, stdio: "inherit" });
 execSync(
