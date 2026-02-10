@@ -1,0 +1,9 @@
+.claude/
+node_modules/
+dist/
+*.tsbuildinfo
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+.pnp.*
+coverage/

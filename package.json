@@ -1,0 +1,22 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn workspaces foreach -At run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "bench": "vitest bench",
+    "lint": "yarn workspaces foreach -A run lint",
+    "version:bump": "node scripts/bump-version.mjs",
+    "publish:npm": "node scripts/publish.mjs"
+  },
+  "devDependencies": {
+    "@rspack/cli": "^1.7.5",
+    "@rspack/core": "^1.7.5",
+    "typescript": "^5.4.0",
+    "vitest": "^3.0.0"
+  },
+  "packageManager": "yarn@4.6.0"
+}

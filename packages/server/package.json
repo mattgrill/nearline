@@ -1,0 +1,51 @@
+{
+  "name": "@mattgrill/nearline-node",
+  "version": "1.0.0",
+  "description": "Node.js-optimized near-duplicate string detection using MinHash + LSH with worker_threads",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./worker": {
+      "import": "./dist/minhash-worker.js",
+      "require": "./dist/minhash-worker.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && rspack build -c rspack.config.mjs && tsc --emitDeclarationOnly --outDir dist",
+    "lint": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@mattgrill/nearline-core": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matthewgrill/duplicate-finder.git",
+    "directory": "packages/server"
+  },
+  "author": "Matthew Grill",
+  "license": "MIT",
+  "keywords": [
+    "duplicate",
+    "deduplication",
+    "minhash",
+    "lsh",
+    "node",
+    "worker-threads"
+  ]
+}
