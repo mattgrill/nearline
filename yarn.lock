@@ -501,7 +501,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mattgrill/nearline-core@npm:^1.1.0, @mattgrill/nearline-core@workspace:packages/core":
+"@mattgrill/nearline-core@npm:^1.2.0, @mattgrill/nearline-core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@mattgrill/nearline-core@workspace:packages/core"
   languageName: unknown
@@ -511,7 +511,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mattgrill/nearline-node@workspace:packages/server"
   dependencies:
-    "@mattgrill/nearline-core": "npm:^1.1.0"
+    "@mattgrill/nearline-core": "npm:^1.2.0"
     "@types/node": "npm:^20.0.0"
   languageName: unknown
   linkType: soft
@@ -520,7 +520,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mattgrill/nearline-web@workspace:packages/client"
   dependencies:
-    "@mattgrill/nearline-core": "npm:^1.1.0"
+    "@mattgrill/nearline-core": "npm:^1.2.0"
   languageName: unknown
   linkType: soft
 
