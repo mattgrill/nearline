@@ -187,8 +187,8 @@ nearline/
 ### Setup
 
 ```sh
-git clone https://github.com/matthewgrill/duplicate-finder.git
-cd duplicate-finder
+git clone https://github.com/mattgrill/nearline.git
+cd nearline
 corepack enable
 yarn install
 ```

@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/matthewgrill/duplicate-finder.git",
+    "url": "https://github.com/mattgrill/nearline.git",
     "directory": "packages/core"
   },
   "author": "Matthew Grill",
