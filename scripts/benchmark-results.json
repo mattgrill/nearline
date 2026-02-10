@@ -1,0 +1,65 @@
+[
+  {
+    "size": 100,
+    "nearlineMs": 2.15,
+    "naiveMs": 8.41,
+    "candidates": 15,
+    "duplicates": 15,
+    "groups": 1,
+    "speedup": "3.9x"
+  },
+  {
+    "size": 500,
+    "nearlineMs": 10.59,
+    "naiveMs": 153.92,
+    "candidates": 435,
+    "duplicates": 435,
+    "groups": 1,
+    "speedup": "14.5x"
+  },
+  {
+    "size": 1000,
+    "nearlineMs": 22.1,
+    "naiveMs": 616.71,
+    "candidates": 1770,
+    "duplicates": 1770,
+    "groups": 1,
+    "speedup": "27.9x"
+  },
+  {
+    "size": 5000,
+    "nearlineMs": 164.93,
+    "naiveMs": 21384.52,
+    "candidates": 44856,
+    "duplicates": 44850,
+    "groups": 1,
+    "speedup": "129.7x"
+  },
+  {
+    "size": 10000,
+    "nearlineMs": 441.09,
+    "naiveMs": null,
+    "candidates": 179712,
+    "duplicates": 179700,
+    "groups": 1,
+    "speedup": null
+  },
+  {
+    "size": 30000,
+    "nearlineMs": 5279.54,
+    "naiveMs": null,
+    "candidates": 1619168,
+    "duplicates": 1619100,
+    "groups": 1,
+    "speedup": null
+  },
+  {
+    "size": 60000,
+    "nearlineMs": 36234.8,
+    "naiveMs": null,
+    "candidates": 6478491,
+    "duplicates": 6478203,
+    "groups": 4,
+    "speedup": null
+  }
+]

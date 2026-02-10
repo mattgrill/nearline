@@ -139,6 +139,24 @@ Input strings
 - LSH candidate pairs encoded as plain numbers (`a * n + b`) to avoid `BigInt` overhead
 - Workers auto-enabled above 5,000 strings; below that, single-threaded is faster
 
+### Benchmarks
+
+<p align="center">
+  <img src="./assets/benchmark.svg" alt="nearline benchmark — performance vs naive O(n²)" width="780" />
+</p>
+
+| Strings | nearline | Naive O(n²) | Speedup |
+|--------:|---------:|------------:|--------:|
+| 100 | 2ms | 8ms | 4x |
+| 500 | 11ms | 154ms | 15x |
+| 1,000 | 22ms | 617ms | 28x |
+| 5,000 | 165ms | 21s | 130x |
+| 10,000 | 441ms | ~86s (est.) | ~194x |
+| 30,000 | 5.3s | ~13min (est.) | ~2,400x |
+| 60,000 | 36s | ~51min (est.) | ~85,000x |
+
+Single-threaded, Node.js v24. Run `npx tsx scripts/run-benchmarks.mts` to reproduce.
+
 ## Project Structure
 
 ```
@@ -171,7 +189,11 @@ nearline/
       tests/
   scripts/
     bump-version.mjs       # Lockstep version bump across all packages
-    publish.mjs            # Manual publish to npm with provenance
+    publish.mjs            # Manual publish to npm
+    run-benchmarks.mts     # Benchmark runner (outputs JSON results)
+    generate-chart.mjs     # SVG chart generator from benchmark results
+  assets/
+    benchmark.svg          # Performance chart (auto-generated)
   .github/workflows/
     ci-cd.yml              # Test, version bump, publish to npm + GitHub Packages
 ```
