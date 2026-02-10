@@ -8,7 +8,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "bench": "vitest bench",
-    "lint": "yarn workspaces foreach -A run lint",
+    "lint": "tsc -p packages/core/tsconfig.json --emitDeclarationOnly --outDir packages/core/dist && yarn workspaces foreach -A run lint",
     "version:bump": "node scripts/bump-version.mjs",
     "publish:npm": "node scripts/publish.mjs"
   },
