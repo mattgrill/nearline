@@ -131,31 +131,6 @@ Input strings
 
 **Why MinHash + LSH?** A naive pairwise approach on 60k strings requires ~1.8 billion comparisons. MinHash + LSH reduces this to near-linear time by only comparing strings that are likely similar based on their hash signatures.
 
-### Performance characteristics
-
-- All hot-path data stored in contiguous `Uint32Array` buffers (~30 MB for 60k strings)
-- FNV-1a hashing operates directly on `charCodeAt` values with no intermediate string allocation
-- MinHash uses `Math.imul`-based multiply-xorshift mixing instead of modular arithmetic
-- LSH candidate pairs encoded as plain numbers (`a * n + b`) to avoid `BigInt` overhead
-- Workers auto-enabled above 5,000 strings; below that, single-threaded is faster
-
-### Benchmarks
-
-<p align="center">
-  <img src="./assets/benchmark.svg" alt="nearline benchmark — performance vs naive O(n²)" width="780" />
-</p>
-
-| Strings | nearline | Naive O(n²) | Speedup |
-|--------:|---------:|------------:|--------:|
-| 100 | 2ms | 8ms | 4x |
-| 500 | 11ms | 154ms | 15x |
-| 1,000 | 22ms | 617ms | 28x |
-| 5,000 | 165ms | 21s | 130x |
-| 10,000 | 441ms | ~86s (est.) | ~194x |
-| 30,000 | 5.3s | ~13min (est.) | ~2,400x |
-| 60,000 | 36s | ~51min (est.) | ~85,000x |
-
-Single-threaded, Node.js v24. Run `npx tsx scripts/run-benchmarks.mts` to reproduce.
 
 ## Project Structure
 
