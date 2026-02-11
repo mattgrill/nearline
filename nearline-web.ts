@@ -785,7 +785,7 @@ export class DuplicateFinder {
   async buildIndex(): Promise<void> {
     const parallelCompute = createWebWorkerCompute(this.workerPoolOptions);
 
-    if (parallelCompute && this.options.workers > 0 && this.strings.length >= 5000) {
+    if (parallelCompute && this.options.workers > 0 && this.strings.length >= WORKER_THRESHOLD) {
       this.signatures = await parallelCompute(
         this.strings,
         this.options.ngramSize,
