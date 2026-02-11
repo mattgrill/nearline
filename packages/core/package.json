@@ -1,7 +1,7 @@
 {
   "name": "@mattgrill/nearline-core",
   "private": true,
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Core algorithms for near-duplicate string detection (MinHash + LSH)",
   "type": "module",
   "main": "./dist/index.cjs",
